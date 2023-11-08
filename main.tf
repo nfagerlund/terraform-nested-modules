@@ -36,6 +36,12 @@ module "nested2" {
     deeper_param = "outer_${var.username}"
 }
 
+module "nested3" {
+    count = 2
+    source = "./deeper"
+    deeper_param = "outer_${var.username}"
+}
+
 output "outer_id" {
   value = "Changed to ${null_resource.outer.id}"
 }
