@@ -19,7 +19,7 @@ resource "null_resource" "deeper" {
 }
 
 resource "null_resource" "many" {
-    for_each = toset(["eh", "bee", "sea"])
+    for_each = toset(["eh", "bee", "sea", "12"])
     triggers = {
         deeper_param = var.deeper_param
         index = each.key
